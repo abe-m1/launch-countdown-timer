@@ -1,0 +1,14 @@
+{
+  "name": "launch-countdown-timer-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Launch countdown timer coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "start:scss": "node-sass scss/main.scss css/style.css -w",
+    "start:server": "live-server",
+    "start": "concurrently npm:start:* "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
