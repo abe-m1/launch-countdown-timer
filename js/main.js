@@ -246,4 +246,5 @@ var c = new Clock(deadline, function () {
   alert('countdown complete');
 });
 c.start();
-document.body.appendChild(c.card);
+const clockContainer = document.querySelector('.clock-container');
+clockContainer.appendChild(c.card);

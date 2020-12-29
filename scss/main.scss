@@ -25,9 +25,11 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background: #eee;
+  color: $white;
+  background: url('/images/bg-stars.svg') no-repeat top center,
+    url('/images/pattern-hills.svg') no-repeat bottom center, $veryVeryDarkBlue;
 }
 
 .clock-container {
@@ -53,6 +55,12 @@ body {
 
 .flip-clock__slot {
   font-size: 2vw;
+  // font-size: 30px;
+  // text-align: center;
+  // background: -webkit-linear-gradient(#4e4e4e, #7b4c1e);
+  // background-clip: text;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
 
 .card {
@@ -63,14 +71,40 @@ body {
   line-height: 0.95;
 }
 
+.card::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  top: 45%;
+  left: -2px;
+  /* transform: translateY(-50%); */
+  background-color: $veryVeryDarkBlue;
+  border-radius: 0 50px 50px 0;
+  z-index: 6;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  top: 50%;
+  right: -2px;
+  transform: translateY(-50%);
+  background-color: $veryVeryDarkBlue;
+  border-radius: 50px 0 0 50px;
+  z-index: 6;
+}
+
 .card__top,
 .card__bottom,
 .card__back::before,
 .card__back::after {
   display: block;
   height: $halfHeight;
-  color: #ccc;
-  background: #222;
+  color: $softRed;
+  background: $veryDarkBlue;
   padding: 0.25em 0.25em;
   border-radius: $borderRadius $borderRadius 0 0;
   backface-visiblity: hidden;
@@ -79,14 +113,42 @@ body {
   transform: translateZ(0);
 }
 
+// .card__top {
+//   -webkit-mask-image: radial-gradient(
+//     circle 19px at bottom right,
+//     #8c282800 0,
+//     transparent 10px,
+//     black 1px
+//   );
+
+// -webkit-mask-image: radial-gradient(
+//   circle 19px at bottom left,
+//   #8c282800 0,
+//   transparent 10px,
+//   black 11px
+// );
+// }
+
 .card__bottom {
-  color: #fff;
+  color: $softRed;
   position: absolute;
   top: 50%;
   left: 0;
   border-top: solid 1px #000;
-  background: #393939;
+  background: $darkDesaturatedBlue;
   border-radius: 0 0 $borderRadius $borderRadius;
+  // -webkit-mask-image: radial-gradient(
+  //   circle 10px at top left,
+  //   transparent 0,
+  //   transparent 20px,
+  //   black 21px
+  // );
+  // -webkit-mask-image: radial-gradient(
+  //   circle 10px at top right,
+  //   transparent 0,
+  //   transparent 20px,
+  //   black 21px
+  // );
   pointer-events: none;
   overflow: hidden;
 }
