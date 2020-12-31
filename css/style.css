@@ -107,12 +107,30 @@ body {
   font-family: "Red Hat Text", sans-serif;
   font-size: 1.4rem;
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   color: white;
-  background: url("/images/bg-stars.svg") no-repeat top center, url("/images/pattern-hills.svg") no-repeat bottom center, #191a24; }
+  background: url(/images/bg-stars.svg) no-repeat top center, url(/images/pattern-hills.svg) no-repeat bottom right, #1e1f29;
+  background-size: cover, 946px 151px, cover; }
+  @media (min-width: 900px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-size: cover, contain, cover; } }
+
+.content {
+  margin-top: 40%; }
+  @media (min-width: 900px) {
+    .content {
+      margin-top: 0; } }
+
+.main-headline {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 80%;
+  font-size: 1.8rem;
+  letter-spacing: 7px; }
 
 .clock-container {
   display: flex; }
@@ -131,38 +149,55 @@ body {
   margin: 0 5px; }
 
 .flip-clock__slot {
-  font-size: 2vw; }
+  font-size: 2vw;
+  color: #8486a9;
+  text-transform: uppercase;
+  letter-spacing: 3px; }
+  @media (min-width: 900px) {
+    .flip-clock__slot {
+      font-size: 1.5vw; } }
 
 .card {
   display: block;
   position: relative;
   padding-bottom: 0.72em;
-  font-size: 9vw;
+  font-size: 11vw;
   line-height: 0.95; }
+  @media (min-width: 900px) {
+    .card {
+      font-size: 7vw; } }
 
 .card::after {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 15px;
   top: 45%;
   left: -2px;
   /* transform: translateY(-50%); */
   background-color: #191a24;
   border-radius: 0 50px 50px 0;
-  z-index: 6; }
+  z-index: 6;
+  width: 8px;
+  height: 10px; }
+  @media (min-width: 900px) {
+    .card::after {
+      width: 10px;
+      height: 15px; } }
 
 .card::before {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 15px;
+  width: 8px;
+  height: 10px;
   top: 50%;
   right: -2px;
   transform: translateY(-50%);
   background-color: #191a24;
   border-radius: 50px 0 0 50px;
   z-index: 6; }
+  @media (min-width: 900px) {
+    .card::before {
+      width: 10px;
+      height: 15px; } }
 
 .card__top,
 .card__bottom,
@@ -171,7 +206,7 @@ body {
   display: block;
   height: 0.72em;
   color: #fb6087;
-  background: #1e1f29;
+  background: #22243a;
   padding: 0.25em 0.25em;
   border-radius: 0.15em 0.15em 0 0;
   backface-visiblity: hidden;
@@ -180,7 +215,7 @@ body {
   transform: translateZ(0); }
 
 .card__bottom {
-  color: #fb6087;
+  color: red;
   position: absolute;
   top: 50%;
   left: 0;
@@ -243,3 +278,11 @@ body {
     opacity: 0.99;
     transform: rotateX(0deg);
     z-index: 5; } }
+
+ion-icon {
+  font-size: 35px;
+  color: #fff;
+  margin-left: 1.5rem;
+  transition: 0.3s; }
+  ion-icon:hover {
+    color: white; }

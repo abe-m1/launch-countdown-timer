@@ -23,13 +23,37 @@ body {
   font-family: $font-family;
   font-size: 1.4rem;
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   color: $white;
-  background: url('/images/bg-stars.svg') no-repeat top center,
-    url('/images/pattern-hills.svg') no-repeat bottom center, $veryVeryDarkBlue;
+  background: url(/images/bg-stars.svg) no-repeat top center,
+    url(/images/pattern-hills.svg) no-repeat bottom right, #1e1f29;
+  background-size: cover, 946px 151px, cover;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-size: cover, contain, cover;
+  }
+}
+
+.content {
+  margin-top: 40%;
+
+  @include respond(tab-port) {
+    margin-top: 0;
+  }
+}
+
+.main-headline {
+  text-transform: uppercase;
+  text-align: center;
+  // margin: auto;
+  margin-bottom: 3rem;
+  width: 80%;
+  font-size: 1.8rem;
+  letter-spacing: 7px;
 }
 
 .clock-container {
@@ -55,46 +79,69 @@ body {
 
 .flip-clock__slot {
   font-size: 2vw;
+  color: $grayishBlue;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   // font-size: 30px;
   // text-align: center;
   // background: -webkit-linear-gradient(#4e4e4e, #7b4c1e);
   // background-clip: text;
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
+
+  @include respond(tab-port) {
+    font-size: 1.5vw;
+  }
 }
 
 .card {
   display: block;
   position: relative;
   padding-bottom: $halfHeight;
-  font-size: 9vw;
+
+  font-size: 11vw;
   line-height: 0.95;
+
+  @include respond(tab-port) {
+    font-size: 7vw;
+  }
 }
 
 .card::after {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 15px;
+
   top: 45%;
   left: -2px;
   /* transform: translateY(-50%); */
   background-color: $veryVeryDarkBlue;
   border-radius: 0 50px 50px 0;
   z-index: 6;
+  width: 8px;
+  height: 10px;
+
+  @include respond(tab-port) {
+    width: 10px;
+    height: 15px;
+  }
 }
 
 .card::before {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 15px;
+  width: 8px;
+  height: 10px;
   top: 50%;
   right: -2px;
   transform: translateY(-50%);
   background-color: $veryVeryDarkBlue;
   border-radius: 50px 0 0 50px;
   z-index: 6;
+
+  @include respond(tab-port) {
+    width: 10px;
+    height: 15px;
+  }
 }
 
 .card__top,
@@ -104,7 +151,8 @@ body {
   display: block;
   height: $halfHeight;
   color: $softRed;
-  background: $veryDarkBlue;
+  // background: $veryDarkBlue;
+  background: hsl(235, 26%, 18%);
   padding: 0.25em 0.25em;
   border-radius: $borderRadius $borderRadius 0 0;
   backface-visiblity: hidden;
@@ -130,7 +178,7 @@ body {
 // }
 
 .card__bottom {
-  color: $softRed;
+  color: red;
   position: absolute;
   top: 50%;
   left: 0;
@@ -219,5 +267,16 @@ body {
     opacity: 0.99;
     transform: rotateX(0deg);
     z-index: 5;
+  }
+}
+
+ion-icon {
+  font-size: 35px;
+  color: #fff;
+  margin-left: 1.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    color: white;
   }
 }
