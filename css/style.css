@@ -109,7 +109,11 @@ body {
   min-height: 100%;
   color: white;
   background: url(/images/bg-stars.svg) no-repeat top center, url(/images/pattern-hills.svg) no-repeat bottom right, #1e1f29;
-  background-size: cover, 946px 151px, cover; }
+  background-size: cover, 946px 151px, cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
   @media (min-width: 900px) {
     body {
       display: flex;
@@ -127,13 +131,21 @@ body {
 .main-headline {
   text-transform: uppercase;
   text-align: center;
+  margin-top: 14rem;
   margin-bottom: 3rem;
   width: 80%;
   font-size: 1.8rem;
   letter-spacing: 7px; }
+  @media (min-width: 900px) {
+    .main-headline {
+      margin-top: 6rem; } }
 
 .clock-container {
-  display: flex; }
+  display: flex;
+  margin-top: -24rem; }
+  @media (min-width: 900px) {
+    .clock-container {
+      margin-top: -14rem; } }
 
 .flip-clock {
   text-align: center;
@@ -281,8 +293,26 @@ body {
 
 ion-icon {
   font-size: 35px;
-  color: #fff;
+  color: #8486a9;
   margin-left: 1.5rem;
   transition: 0.3s; }
   ion-icon:hover {
     color: white; }
+
+.social {
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 0 0.3rem;
+  margin-bottom: 3rem; }
+  @media (min-width: 900px) {
+    .social {
+      font-size: 1.5rem;
+      width: 15%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 0 0.5rem;
+      order: 4; } }

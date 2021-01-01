@@ -28,6 +28,11 @@ body {
     url(/images/pattern-hills.svg) no-repeat bottom right, #1e1f29;
   background-size: cover, 946px 151px, cover;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   @include respond(tab-port) {
     display: flex;
     flex-direction: column;
@@ -50,14 +55,24 @@ body {
   text-transform: uppercase;
   text-align: center;
   // margin: auto;
+  margin-top: 14rem;
   margin-bottom: 3rem;
   width: 80%;
   font-size: 1.8rem;
   letter-spacing: 7px;
+
+  @include respond(tab-port) {
+    margin-top: 6rem;
+  }
 }
 
 .clock-container {
   display: flex;
+  margin-top: -24rem;
+
+  @include respond(tab-port) {
+    margin-top: -14rem;
+  }
 }
 
 .flip-clock {
@@ -272,11 +287,31 @@ body {
 
 ion-icon {
   font-size: 35px;
-  color: #fff;
+  color: $grayishBlue;
   margin-left: 1.5rem;
   transition: 0.3s;
 
   &:hover {
     color: white;
+  }
+}
+
+.social {
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 0 0.3rem;
+  margin-bottom: 3rem;
+
+  @include respond(tab-port) {
+    font-size: 1.5rem;
+    width: 15%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    order: 4;
   }
 }
