@@ -26,7 +26,7 @@ body {
   color: $white;
   background: url(/images/bg-stars.svg) no-repeat top center,
     url(/images/pattern-hills.svg) no-repeat bottom right, #1e1f29;
-  background-size: cover, 946px 151px, cover;
+  background-size: contain, 946px 151px, cover;
 
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ body {
     justify-content: space-around;
     align-items: center;
 
-    background-size: cover, contain, cover;
+    background-size: 100% 71%, contain, cover;
   }
 }
 
@@ -89,7 +89,11 @@ body {
 
 .flip-clock__piece {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 7px;
+
+  @include respond(tab-port) {
+    margin: 0 12px;
+  }
 }
 
 .flip-clock__slot {
@@ -105,7 +109,7 @@ body {
   // -webkit-text-fill-color: transparent;
 
   @include respond(tab-port) {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
   }
 }
 
@@ -118,7 +122,9 @@ body {
   line-height: 0.95;
 
   @include respond(tab-port) {
-    font-size: 7vw;
+    font-size: 6vw;
+    box-shadow: 0 9px 5px -2px #191a24;
+    margin-bottom: 3rem;
   }
 }
 
@@ -165,7 +171,7 @@ body {
 .card__back::after {
   display: block;
   height: $halfHeight;
-  color: $softRed;
+  color: $softRedDark;
   // background: $veryDarkBlue;
   background: hsl(235, 26%, 18%);
   padding: 0.25em 0.25em;
@@ -193,7 +199,7 @@ body {
 // }
 
 .card__bottom {
-  color: red;
+  color: $softRed;
   position: absolute;
   top: 50%;
   left: 0;
@@ -291,6 +297,10 @@ ion-icon {
   margin-left: 1.5rem;
   transition: 0.3s;
 
+  @include respond(tab-port) {
+    font-size: 30px;
+  }
+
   &:hover {
     color: white;
   }
@@ -307,7 +317,7 @@ ion-icon {
 
   @include respond(tab-port) {
     font-size: 1.5rem;
-    width: 15%;
+    width: 12%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
