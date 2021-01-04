@@ -43,18 +43,9 @@ body {
   }
 }
 
-.content {
-  margin-top: 40%;
-
-  @include respond(tab-port) {
-    margin-top: 0;
-  }
-}
-
 .main-headline {
   text-transform: uppercase;
   text-align: center;
-  // margin: auto;
   margin-top: 14rem;
   margin-bottom: 3rem;
   width: 80%;
@@ -101,12 +92,6 @@ body {
   color: $grayishBlue;
   text-transform: uppercase;
   letter-spacing: 3px;
-  // font-size: 30px;
-  // text-align: center;
-  // background: -webkit-linear-gradient(#4e4e4e, #7b4c1e);
-  // background-clip: text;
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
 
   @include respond(tab-port) {
     font-size: 1.5rem;
@@ -134,7 +119,6 @@ body {
 
   top: 45%;
   left: -2px;
-  /* transform: translateY(-50%); */
   background-color: $veryVeryDarkBlue;
   border-radius: 0 50px 50px 0;
   z-index: 6;
@@ -172,31 +156,14 @@ body {
   display: block;
   height: $halfHeight;
   color: $softRedDark;
-  // background: $veryDarkBlue;
   background: hsl(235, 26%, 18%);
   padding: 0.25em 0.25em;
   border-radius: $borderRadius $borderRadius 0 0;
-  backface-visiblity: hidden;
+  // backface-visiblity: hidden;
   transform-style: preserve-3d;
   width: 1.8em;
   transform: translateZ(0);
 }
-
-// .card__top {
-//   -webkit-mask-image: radial-gradient(
-//     circle 19px at bottom right,
-//     #8c282800 0,
-//     transparent 10px,
-//     black 1px
-//   );
-
-// -webkit-mask-image: radial-gradient(
-//   circle 19px at bottom left,
-//   #8c282800 0,
-//   transparent 10px,
-//   black 11px
-// );
-// }
 
 .card__bottom {
   color: $softRed;
@@ -206,18 +173,6 @@ body {
   border-top: solid 1px #000;
   background: $darkDesaturatedBlue;
   border-radius: 0 0 $borderRadius $borderRadius;
-  // -webkit-mask-image: radial-gradient(
-  //   circle 10px at top left,
-  //   transparent 0,
-  //   transparent 20px,
-  //   black 21px
-  // );
-  // -webkit-mask-image: radial-gradient(
-  //   circle 10px at top right,
-  //   transparent 0,
-  //   transparent 20px,
-  //   black 21px
-  // );
   pointer-events: none;
   overflow: hidden;
 }
@@ -302,7 +257,7 @@ ion-icon {
   }
 
   &:hover {
-    color: white;
+    color: $softRed;
   }
 }
 
@@ -324,4 +279,16 @@ ion-icon {
     padding: 0 0.5rem;
     order: 4;
   }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: none;
+  @include respond(phone) {
+    display: block;
+  }
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
